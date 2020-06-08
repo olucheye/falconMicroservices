@@ -9,15 +9,12 @@ const {
 
 const router = express.Router();
 
-router
-  .route('/')
-  .get(getFiles)
-  .post(createFile);
 
-router
-  .route('/:id')
-  .get(getFile)
-  .put(updateFile)
-  .delete(deleteFile);
+router.post("/", createFile);
+router.get("/", getFiles);
+router.get("/:fileId", getFile);
+router.put("/:fileId", updateFile);
+router.delete("/:fileId", deleteFile);
+
 
 module.exports = router;
