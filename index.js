@@ -8,7 +8,7 @@ app.use(express.json());
 const get = require();
 const post = require();
 const update = require();
-const remove = require();
+const remove = require('./routes/remove');
 
 app.use('api/v1/files/file/uploads', get);
 app.use('api/v1/files/file/upload', post);
