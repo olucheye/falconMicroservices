@@ -5,7 +5,7 @@
 // const storage = new Storage();
 
 exports.remove = async (req, res, next) => {
-  try{
+//   try{
   // Deletes the file from the bucket
 //   await storage.bucket('name_of_bucket').file("name_of_file").delete();
 
@@ -22,7 +22,7 @@ exports.remove = async (req, res, next) => {
         error: error,
       });
     });
-  } catch(error){
-    console.log(error);
-  }
+//   } catch(error){
+//     console.log(error);
+//   }
 };
