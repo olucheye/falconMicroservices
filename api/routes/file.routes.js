@@ -9,16 +9,16 @@ module.exports = (app) => {
   // Retrieve all files
   router.get("/", files.findAll);
 
-  // Retrieve a single Tutorial with id
+  // Retrieve a single File with id
   router.get("/:id", files.findOne);
 
-  // Update a Tutorial with id
+  // Update a File with id
   router.put("/:id", files.update);
 
-  // Delete a Tutorial with id
+  // Delete a File with id
   router.delete("/:id", files.delete);
 
-  // Create a new Tutorial
+  // Create a new File
   router.delete("/", files.deleteAll);
 
   app.use("/api/v1", router);
