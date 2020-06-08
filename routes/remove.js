@@ -1,7 +1,15 @@
 const Thing = require("../models/thing");
+const {Storage} = require('@google-cloud/storage');
 
+// Creates a client
+const storage = new Storage();
 
-exports.remove = (req, res, next) => {
+exports.remove = async (req, res, next) => {
+  try{
+  // Deletes the file from the bucket
+  await storage.bucket('name_of_bucket').file("name_of_file").delete();
+
+  console.log(`gs://${'name_of_bucket'}/${"name_of_file"} deleted.`);
   Thing.deleteOne({ _id: req.params.id })
     .then(() => {
       res.status(200).json({
@@ -14,4 +22,7 @@ exports.remove = (req, res, next) => {
         error: error,
       });
     });
+  } catch(error){
+    console.log(error);
+  }
 };
