@@ -5,7 +5,7 @@ const app = express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-const get = require();
+const get = require('./routes/get');
 const post = require();
 const update = require();
 const remove = require();
