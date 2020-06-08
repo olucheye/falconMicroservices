@@ -4,10 +4,11 @@ const router = express.Router();
 
 //Route Handler
 function getAllFiles(req, res) {
-  let files = model.find();
+  let data = model.find();
   res.status(200).json({
-    status: "Successful",
-    data: files,
+    status: "true",
+    message: "Files Found",
+    files: data,
   });
 }
 
