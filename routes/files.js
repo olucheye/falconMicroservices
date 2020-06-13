@@ -1,6 +1,5 @@
 const express = require('express');
 const {
-  getFiles,
   getFile,
   createFile,
   updateFile,
@@ -11,7 +10,7 @@ const router = express.Router();
 
 
 router.post("/", createFile);
-router.get("/", getFiles);
+router.get("/", getFile);
 router.get("/:fileId", getFile);
 router.put("/:fileId", updateFile);
 router.delete("/:fileId", deleteFile);
